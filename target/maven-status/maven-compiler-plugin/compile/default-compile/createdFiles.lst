@@ -1,0 +1,6 @@
+dao\PersonDao.class
+service\IPersonService.class
+bean\Person.class
+test\MavenTest.class
+serviceImpl\PersonServiceImpl.class
+action\LoginAction.class

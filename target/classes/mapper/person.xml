@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper：bean.Person -->
+<mapper namespace="dao.PersonDao">
+    <resultMap type="Person" id="selectPerson">
+        <id column="perId" property="personId"/>
+        <result property="personId" column="perId"/>
+        <result property="personName" column="perName"/>
+        <result property="personAge" column="perAge"/>
+    </resultMap>
+
+    <select id="getPersonListById" parameterType="Person" resultType="Person" resultMap="selectPerson">
+        <!-- 底层的SQL语句 -->
+        select * from person p where p.perid =#{personId}
+    </select>
+
+    <select id="getAllPersonList" resultType="Person" resultMap="selectPerson">
+        <!-- 底层的SQL语句 -->
+        select * from person p
+    </select>
+</mapper>
